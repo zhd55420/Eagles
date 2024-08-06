@@ -1,0 +1,15 @@
+Starting new HTTP connection (1): 15.204.133.239:8086
+http://15.204.133.239:8086 "GET /query?q=SELECT+top%28%22bandwidth_sum%22%2C+3%29+FROM+%22autogen%22.%22aggregated_bandwidth_users%22+WHERE+%22server_brand%22+%3D~+%2F%5E31026942%2F+AND+time+%3E%3D+now%28%29+-+10m%3B&db=livetv HTTP/1.1" 200 None
+http://15.204.133.239:8086 "GET /query?q=SELECT+top%28%22users_sum%22%2C+3%29+FROM+%22autogen%22.%22aggregated_bandwidth_users%22+WHERE+%22server_brand%22+%3D~+%2F%5E31026942%24%2F+AND+time+%3E%3D+now%28%29+-+10m%3B&db=livetv HTTP/1.1" 200 None
+Fili TV Bandwidth: 0.02 Gbps, Users: 28
+http://15.204.133.239:8086 "GET /query?q=SELECT+top%28%22bandwidth_sum%22%2C+3%29+FROM+%22autogen%22.%22aggregated_bandwidth_users%22+WHERE+%22server_brand%22+%3D~+%2F%5E31026989%2F+AND+time+%3E%3D+now%28%29+-+10m%3B&db=livetv HTTP/1.1" 200 None
+http://15.204.133.239:8086 "GET /query?q=SELECT+top%28%22users_sum%22%2C+3%29+FROM+%22autogen%22.%22aggregated_bandwidth_users%22+WHERE+%22server_brand%22+%3D~+%2F%5E31026989%24%2F+AND+time+%3E%3D+now%28%29+-+10m%3B&db=livetv HTTP/1.1" 200 None
+Fili TV Mobile Bandwidth: 0.01 Gbps, Users: 8
+http://15.204.133.239:8086 "GET /query?q=SELECT+top%28%22bandwidth_sum%22%2C+3%29+FROM+%22autogen%22.%22aggregated_bandwidth_users%22+WHERE+%22server_brand%22+%3D~+%2F%5E31025926%2F+AND+time+%3E%3D+now%28%29+-+10m%3B&db=livetv HTTP/1.1" 200 None
+http://15.204.133.239:8086 "GET /query?q=SELECT+top%28%22users_sum%22%2C+3%29+FROM+%22autogen%22.%22aggregated_bandwidth_users%22+WHERE+%22server_brand%22+%3D~+%2F%5E31025926%24%2F+AND+time+%3E%3D+now%28%29+-+10m%3B&db=livetv HTTP/1.1" 200 None
+WAKA TV Bandwidth: 2.34 Gbps, Users: 3461
+http://15.204.133.239:8086 "GET /query?q=SELECT+top%28%22bandwidth_sum%22%2C+3%29+FROM+%22autogen%22.%22aggregated_bandwidth_users%22+WHERE+%22server_brand%22+%3D~+%2F%5E31026773%2F+AND+time+%3E%3D+now%28%29+-+10m%3B&db=livetv HTTP/1.1" 200 None
+http://15.204.133.239:8086 "GET /query?q=SELECT+top%28%22users_sum%22%2C+3%29+FROM+%22autogen%22.%22aggregated_bandwidth_users%22+WHERE+%22server_brand%22+%3D~+%2F%5E31026773%24%2F+AND+time+%3E%3D+now%28%29+-+10m%3B&db=livetv HTTP/1.1" 200 None
+WAKA TV Mobile Bandwidth: 0.14 Gbps, Users: 167
+Starting new HTTPS connection (1): open.larksuite.com:443
+https://open.larksuite.com:443 "POST /open-apis/bot/v2/hook/96c73090-2a31-4a6c-9721-c5c291c7777c HTTP/1.1" 200 77

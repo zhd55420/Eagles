@@ -1,0 +1,133 @@
+'Fili TV'
+'Fili TV Mobile'
+'WAKA TV'
+'WAKA TV Mobile'
+'BTV'
+'BTV APP'
+'BTV APP MOBILE'
+'BTV MOBILE'
+'BTV PRO'
+'BTVE'
+'BlueTV'
+'BlueTV Mobile'
+'Boto TV'
+'Boto TV Mobile'
+'Duna TV'
+'Duna TV Mobile'
+'PIX TV'
+'PIX TV Mobile'
+'PLUS TV'
+'PLUS TV Mobile'
+'Red Mobile'
+'RedLITE TV'
+'RedOne'
+'RedOne Mobile'
+'RedPlay Live'
+'RedPlay Live Mobile'
+'RedPlay TV'
+'RedPro TV'
+'Redtvhome'
+'Redtvhome Mobile'
+'Redtvstick'
+'Redtvstick Mobile'
+'TVE'
+'TVE BOX'
+'TVE LA'
+'TVE LA Mobile'
+'TVE Mobile'
+'Fili TV'
+'Fili TV Mobile'
+'WAKA TV'
+'WAKA TV Mobile'
+'BTV'
+'BTV APP'
+'BTV APP MOBILE'
+'BTV MOBILE'
+'BTV PRO'
+'BTVE'
+'BlueTV'
+'BlueTV Mobile'
+'Boto TV'
+'Boto TV Mobile'
+'Duna TV'
+'Duna TV Mobile'
+'PIX TV'
+'PIX TV Mobile'
+'PLUS TV'
+'PLUS TV Mobile'
+'Red Mobile'
+'RedLITE TV'
+'RedOne'
+'RedOne Mobile'
+'RedPlay Live'
+'RedPlay Live Mobile'
+'RedPlay TV'
+'RedPro TV'
+'Redtvhome'
+'Redtvhome Mobile'
+'Redtvstick'
+'Redtvstick Mobile'
+'TVE'
+'TVE BOX'
+'TVE LA'
+'TVE LA Mobile'
+'TVE Mobile'
+HTTPConnectionPool(host='http', port=80): Max retries exceeded with url: //metric01.b2030.host/:8086/query?q=SELECT+top%28%22bandwidth_sum%22%2C+3%29+FROM+%22autogen%22.%22aggregated_bandwidth_users%22+WHERE+%22server_brand%22+%3D~+%2F%5E31026942%2F+AND+time+%3E%3D+now%28%29+-+10m%3B&db=livetv (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x000001DC7A5B25E0>: Failed to resolve 'http' ([Errno 11001] getaddrinfo failed)"))
+HTTPConnectionPool(host='http', port=80): Max retries exceeded with url: //metric01.b2030.host/:8086/query?q=SELECT+top%28%22bandwidth_sum%22%2C+3%29+FROM+%22autogen%22.%22aggregated_bandwidth_users%22+WHERE+%22server_brand%22+%3D~+%2F%5E31026989%2F+AND+time+%3E%3D+now%28%29+-+10m%3B&db=livetv (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x000001DC7A5B8250>: Failed to resolve 'http' ([Errno 11001] getaddrinfo failed)"))
+HTTPConnectionPool(host='http', port=80): Max retries exceeded with url: //metric01.b2030.host/:8086/query?q=SELECT+top%28%22bandwidth_sum%22%2C+3%29+FROM+%22autogen%22.%22aggregated_bandwidth_users%22+WHERE+%22server_brand%22+%3D~+%2F%5E31025926%2F+AND+time+%3E%3D+now%28%29+-+10m%3B&db=livetv (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x000001DC7A5B27F0>: Failed to resolve 'http' ([Errno 11001] getaddrinfo failed)"))
+HTTPConnectionPool(host='http', port=80): Max retries exceeded with url: //metric01.b2030.host/:8086/query?q=SELECT+top%28%22bandwidth_sum%22%2C+3%29+FROM+%22autogen%22.%22aggregated_bandwidth_users%22+WHERE+%22server_brand%22+%3D~+%2F%5E31026773%2F+AND+time+%3E%3D+now%28%29+-+10m%3B&db=livetv (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x000001DC7A5B83A0>: Failed to resolve 'http' ([Errno 11001] getaddrinfo failed)"))
+HTTPConnectionPool(host='http', port=80): Max retries exceeded with url: //metric01.b2030.host/:8086/query?q=SELECT+top%28%22bandwidth_sum%22%2C+3%29+FROM+%22autogen%22.%22aggregated_bandwidth_users%22+WHERE+%22server_brand%22+%3D~+%2F%5Ebtvbox%2F+AND+time+%3E%3D+now%28%29+-+10m%3B&db=livetv (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x000001DC7A5B2B50>: Failed to resolve 'http' ([Errno 11001] getaddrinfo failed)"))
+HTTPConnectionPool(host='http', port=80): Max retries exceeded with url: //metric01.b2030.host/:8086/query?q=SELECT+top%28%22bandwidth_sum%22%2C+3%29+FROM+%22autogen%22.%22aggregated_bandwidth_users%22+WHERE+%22server_brand%22+%3D~+%2F%5E10000203%2F+AND+time+%3E%3D+now%28%29+-+10m%3B&db=livetv (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x000001DC7A5F1430>: Failed to resolve 'http' ([Errno 11001] getaddrinfo failed)"))
+HTTPConnectionPool(host='http', port=80): Max retries exceeded with url: //metric01.b2030.host/:8086/query?q=SELECT+top%28%22bandwidth_sum%22%2C+3%29+FROM+%22autogen%22.%22aggregated_bandwidth_users%22+WHERE+%22server_brand%22+%3D~+%2F%5E31026942%2F+AND+time+%3E%3D+now%28%29+-+10m%3B&db=livetv (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x000002762D7105E0>: Failed to resolve 'http' ([Errno 11001] getaddrinfo failed)"))
+HTTPConnectionPool(host='http', port=80): Max retries exceeded with url: //metric01.b2030.host/:8086/query?q=SELECT+top%28%22bandwidth_sum%22%2C+3%29+FROM+%22autogen%22.%22aggregated_bandwidth_users%22+WHERE+%22server_brand%22+%3D~+%2F%5E31026989%2F+AND+time+%3E%3D+now%28%29+-+10m%3B&db=livetv (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x000002762D716250>: Failed to resolve 'http' ([Errno 11001] getaddrinfo failed)"))
+HTTPConnectionPool(host='http', port=80): Max retries exceeded with url: //metric01.b2030.host/:8086/query?q=SELECT+top%28%22bandwidth_sum%22%2C+3%29+FROM+%22autogen%22.%22aggregated_bandwidth_users%22+WHERE+%22server_brand%22+%3D~+%2F%5E31025926%2F+AND+time+%3E%3D+now%28%29+-+10m%3B&db=livetv (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x000002762D710640>: Failed to resolve 'http' ([Errno 11001] getaddrinfo failed)"))
+HTTPConnectionPool(host='http', port=80): Max retries exceeded with url: //metric01.b2030.host/:8086/query?q=SELECT+top%28%22bandwidth_sum%22%2C+3%29+FROM+%22autogen%22.%22aggregated_bandwidth_users%22+WHERE+%22server_brand%22+%3D~+%2F%5E31026773%2F+AND+time+%3E%3D+now%28%29+-+10m%3B&db=livetv (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x000002762D716460>: Failed to resolve 'http' ([Errno 11001] getaddrinfo failed)"))
+HTTPConnectionPool(host='http', port=80): Max retries exceeded with url: //metric01.b2030.host/:8086/query?q=SELECT+top%28%22bandwidth_sum%22%2C+3%29+FROM+%22autogen%22.%22aggregated_bandwidth_users%22+WHERE+%22server_brand%22+%3D~+%2F%5Ebtvbox%2F+AND+time+%3E%3D+now%28%29+-+10m%3B&db=livetv (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x000002762D7103A0>: Failed to resolve 'http' ([Errno 11001] getaddrinfo failed)"))
+HTTPConnectionPool(host='http', port=80): Max retries exceeded with url: //metric01.b2030.host:8086/query?q=SELECT+top%28%22bandwidth_sum%22%2C+3%29+FROM+%22autogen%22.%22aggregated_bandwidth_users%22+WHERE+%22server_brand%22+%3D~+%2F%5E31026942%2F+AND+time+%3E%3D+now%28%29+-+10m%3B&db=livetv (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x000001B8A72015E0>: Failed to resolve 'http' ([Errno 11001] getaddrinfo failed)"))
+HTTPConnectionPool(host='http', port=80): Max retries exceeded with url: //metric01.b2030.host:8086/query?q=SELECT+top%28%22bandwidth_sum%22%2C+3%29+FROM+%22autogen%22.%22aggregated_bandwidth_users%22+WHERE+%22server_brand%22+%3D~+%2F%5E31026989%2F+AND+time+%3E%3D+now%28%29+-+10m%3B&db=livetv (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x000001B8A7207250>: Failed to resolve 'http' ([Errno 11001] getaddrinfo failed)"))
+HTTPConnectionPool(host='http', port=80): Max retries exceeded with url: //metric01.b2030.host:8086/query?q=SELECT+top%28%22bandwidth_sum%22%2C+3%29+FROM+%22autogen%22.%22aggregated_bandwidth_users%22+WHERE+%22server_brand%22+%3D~+%2F%5E31025926%2F+AND+time+%3E%3D+now%28%29+-+10m%3B&db=livetv (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x000001B8A7201640>: Failed to resolve 'http' ([Errno 11001] getaddrinfo failed)"))
+HTTPConnectionPool(host='http', port=80): Max retries exceeded with url: //metric01.b2030.host:8086/query?q=SELECT+top%28%22bandwidth_sum%22%2C+3%29+FROM+%22autogen%22.%22aggregated_bandwidth_users%22+WHERE+%22server_brand%22+%3D~+%2F%5E31026773%2F+AND+time+%3E%3D+now%28%29+-+10m%3B&db=livetv (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x000001B8A7207460>: Failed to resolve 'http' ([Errno 11001] getaddrinfo failed)"))
+HTTPConnectionPool(host='http', port=80): Max retries exceeded with url: //metric01.b2030.host:8086/query?q=SELECT+top%28%22bandwidth_sum%22%2C+3%29+FROM+%22autogen%22.%22aggregated_bandwidth_users%22+WHERE+%22server_brand%22+%3D~+%2F%5Ebtvbox%2F+AND+time+%3E%3D+now%28%29+-+10m%3B&db=livetv (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x000001B8A72013A0>: Failed to resolve 'http' ([Errno 11001] getaddrinfo failed)"))
+HTTPConnectionPool(host='http', port=80): Max retries exceeded with url: //metric01.b2030.host:8086/query?q=SELECT+top%28%22bandwidth_sum%22%2C+3%29+FROM+%22autogen%22.%22aggregated_bandwidth_users%22+WHERE+%22server_brand%22+%3D~+%2F%5E10000203%2F+AND+time+%3E%3D+now%28%29+-+10m%3B&db=livetv (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x000001B8A723C130>: Failed to resolve 'http' ([Errno 11001] getaddrinfo failed)"))
+HTTPConnectionPool(host='http', port=80): Max retries exceeded with url: //metric01.b2030.host:8086/query?q=SELECT+top%28%22bandwidth_sum%22%2C+3%29+FROM+%22autogen%22.%22aggregated_bandwidth_users%22+WHERE+%22server_brand%22+%3D~+%2F%5E10000204%2F+AND+time+%3E%3D+now%28%29+-+10m%3B&db=livetv (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x000001B8A723CA60>: Failed to resolve 'http' ([Errno 11001] getaddrinfo failed)"))
+HTTPConnectionPool(host='http', port=80): Max retries exceeded with url: //metric01.b2030.host:8086/query?q=SELECT+top%28%22bandwidth_sum%22%2C+3%29+FROM+%22autogen%22.%22aggregated_bandwidth_users%22+WHERE+%22server_brand%22+%3D~+%2F%5Emobile_btv%2F+AND+time+%3E%3D+now%28%29+-+10m%3B&db=livetv (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x000001B8A723CCD0>: Failed to resolve 'http' ([Errno 11001] getaddrinfo failed)"))
+HTTPConnectionPool(host='http', port=80): Max retries exceeded with url: //metric01.b2030.host:8086/query?q=SELECT+top%28%22bandwidth_sum%22%2C+3%29+FROM+%22autogen%22.%22aggregated_bandwidth_users%22+WHERE+%22server_brand%22+%3D~+%2F%5Ebtvpro%2F+AND+time+%3E%3D+now%28%29+-+10m%3B&db=livetv (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x000001B8A723C310>: Failed to resolve 'http' ([Errno 11001] getaddrinfo failed)"))
+HTTPConnectionPool(host='http', port=80): Max retries exceeded with url: //metric01.b2030.host:8086/query?q=SELECT+top%28%22bandwidth_sum%22%2C+3%29+FROM+%22autogen%22.%22aggregated_bandwidth_users%22+WHERE+%22server_brand%22+%3D~+%2F%5Ebtve%2F+AND+time+%3E%3D+now%28%29+-+10m%3B&db=livetv (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x000001B8A7201460>: Failed to resolve 'http' ([Errno 11001] getaddrinfo failed)"))
+HTTPConnectionPool(host='http', port=80): Max retries exceeded with url: //metric01.b2030.host:8086/query?q=SELECT+top%28%22bandwidth_sum%22%2C+3%29+FROM+%22autogen%22.%22aggregated_bandwidth_users%22+WHERE+%22server_brand%22+%3D~+%2F%5Ebluetv%2F+AND+time+%3E%3D+now%28%29+-+10m%3B&db=livetv (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x000001B8A71562B0>: Failed to resolve 'http' ([Errno 11001] getaddrinfo failed)"))
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^31026942/ AND time >= now() - 10m', requires READ on livetv"}
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^31026989/ AND time >= now() - 10m', requires READ on livetv"}
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^31025926/ AND time >= now() - 10m', requires READ on livetv"}
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^31026773/ AND time >= now() - 10m', requires READ on livetv"}
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^btvbox/ AND time >= now() - 10m', requires READ on livetv"}
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^10000203/ AND time >= now() - 10m', requires READ on livetv"}
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^10000204/ AND time >= now() - 10m', requires READ on livetv"}
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^mobile_btv/ AND time >= now() - 10m', requires READ on livetv"}
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^btvpro/ AND time >= now() - 10m', requires READ on livetv"}
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^btve/ AND time >= now() - 10m', requires READ on livetv"}
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^bluetv/ AND time >= now() - 10m', requires READ on livetv"}
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^pmbluetv/ AND time >= now() - 10m', requires READ on livetv"}
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^31026826/ AND time >= now() - 10m', requires READ on livetv"}
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^31026827/ AND time >= now() - 10m', requires READ on livetv"}
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^31026931/ AND time >= now() - 10m', requires READ on livetv"}
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^31026932/ AND time >= now() - 10m', requires READ on livetv"}
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^31002406/ AND time >= now() - 10m', requires READ on livetv"}
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^31002418/ AND time >= now() - 10m', requires READ on livetv"}
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^31002037/ AND time >= now() - 10m', requires READ on livetv"}
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^31002263/ AND time >= now() - 10m', requires READ on livetv"}
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^mobile_redplay/ AND time >= now() - 10m', requires READ on livetv"}
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^redlite/ AND time >= now() - 10m', requires READ on livetv"}
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^redone/ AND time >= now() - 10m', requires READ on livetv"}
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^rpm/ AND time >= now() - 10m', requires READ on livetv"}
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^redplaybox/ AND time >= now() - 10m', requires READ on livetv"}
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^rpm/ AND time >= now() - 10m', requires READ on livetv"}
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^tve_redplay/ AND time >= now() - 10m', requires READ on livetv"}
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^redpro/ AND time >= now() - 10m', requires READ on livetv"}
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^redhome_box/ AND time >= now() - 10m', requires READ on livetv"}
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^10000193/ AND time >= now() - 10m', requires READ on livetv"}
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^10000177/ AND time >= now() - 10m', requires READ on livetv"}
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^10000178/ AND time >= now() - 10m', requires READ on livetv"}
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^tve_web/ AND time >= now() - 10m', requires READ on livetv"}
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^tve_box/ AND time >= now() - 10m', requires READ on livetv"}
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^tve_es/ AND time >= now() - 10m', requires READ on livetv"}
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^pmtvees/ AND time >= now() - 10m', requires READ on livetv"}
+403: {"error":"error authorizing query: reader not authorized to execute statement 'SELECT top(bandwidth_sum, 3) FROM autogen.aggregated_bandwidth_users WHERE server_brand =~ /^mobile_tveweb/ AND time >= now() - 10m', requires READ on livetv"}

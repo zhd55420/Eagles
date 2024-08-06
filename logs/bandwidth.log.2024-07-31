@@ -1,0 +1,11 @@
+2024-08-01 00:00:03,795 INFO btv-resource-group01 PRT Bandwidth: 249.56 Gbps, PRT Users: 529711, Tracker Users: 531589
+2024-08-01 00:00:04,594 INFO blue-resource-group01 PRT Bandwidth: 79.55 Gbps, PRT Users: 124470, Tracker Users: 124710
+2024-08-01 00:00:05,489 INFO red-resource-group01 PRT Bandwidth: 123.44 Gbps, PRT Users: 198197, Tracker Users: 197224
+2024-08-01 00:00:06,802 INFO tvevno-resource-group01 PRT Bandwidth: 442.01 Gbps, PRT Users: 649175, Tracker Users: 645863
+2024-08-01 00:00:07,764 INFO goose-usonline-cdn-group PRT Bandwidth: 0.01 Gbps, PRT Users: 2, Tracker Users: 3
+2024-08-01 00:00:08,610 INFO portuguese-cdn-group PRT Bandwidth: 27.44 Gbps, PRT Users: 37972, Tracker Users: 38653
+2024-08-01 00:00:09,399 INFO spanish-cdn-group PRT Bandwidth: 4.95 Gbps, PRT Users: 4050, Tracker Users: 4048
+2024-08-01 00:00:10,174 INFO goose-africa-cdn-group PRT Bandwidth: 3.60 Gbps, PRT Users: 4994, Tracker Users: 4996
+2024-08-01 00:00:10,891 INFO doozy-cdn-group PRT Bandwidth: 0.00 Gbps, PRT Users: 0, Tracker Users: 0
+2024-08-01 00:00:11,627 INFO doozy-resource-group01 PRT Bandwidth: 0.02 Gbps, PRT Users: 8, Tracker Users: 8
+2024-08-01 00:00:12,391 INFO cmc-resource-group01 PRT Bandwidth: 0.01 Gbps, PRT Users: 6, Tracker Users: 6

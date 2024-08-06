@@ -1,0 +1,20 @@
+2024-08-03 00:00:02,928 INFO PM Bandwidth: 116.14 Gbps, PM Users: 389589, PM Mobile Bandwidth: 4.89 Gbps, PM Mobile Users: 10877
+2024-08-03 00:00:03,767 INFO MRT Bandwidth: 0.00 Gbps, MRT Users: 0, MRT Mobile Bandwidth: 0.00 Gbps, MRT Mobile Users: 0
+2024-08-03 00:00:03,767 DEBUG Prepared packet: host_name=MFC_Info, item_key=pm.bandwidth, item_value=116.14178104698658
+2024-08-03 00:00:03,767 DEBUG Prepared packet: host_name=MFC_Info, item_key=pm.users, item_value=389589
+2024-08-03 00:00:03,767 DEBUG Prepared packet: host_name=MFC_Info, item_key=pm.mobile_bandwidth, item_value=4.88736854493618
+2024-08-03 00:00:03,767 DEBUG Prepared packet: host_name=MFC_Info, item_key=pm.mobile_users, item_value=10877
+2024-08-03 00:00:03,767 DEBUG Prepared packet: host_name=MFC_Info, item_key=mrt.bandwidth, item_value=0
+2024-08-03 00:00:03,767 DEBUG Prepared packet: host_name=MFC_Info, item_key=mrt.users, item_value=0
+2024-08-03 00:00:03,767 DEBUG Prepared packet: host_name=MFC_Info, item_key=mrt.mobile_bandwidth, item_value=0
+2024-08-03 00:00:03,767 DEBUG Prepared packet: host_name=MFC_Info, item_key=mrt.mobile_users, item_value=0
+2024-08-03 00:00:04,201 INFO Successfully sent data to Zabbix: 8 processed, 0 failed, 8 total
+2024-08-03 00:00:04,201 DEBUG Prepared packet: host_name=MFC_Info, item_key=pm.bandwidth, item_value=116.14178104698658
+2024-08-03 00:00:04,201 DEBUG Prepared packet: host_name=MFC_Info, item_key=pm.users, item_value=389589
+2024-08-03 00:00:04,201 DEBUG Prepared packet: host_name=MFC_Info, item_key=pm.mobile_bandwidth, item_value=4.88736854493618
+2024-08-03 00:00:04,201 DEBUG Prepared packet: host_name=MFC_Info, item_key=pm.mobile_users, item_value=10877
+2024-08-03 00:00:04,201 DEBUG Prepared packet: host_name=MFC_Info, item_key=mrt.bandwidth, item_value=0
+2024-08-03 00:00:04,201 DEBUG Prepared packet: host_name=MFC_Info, item_key=mrt.users, item_value=0
+2024-08-03 00:00:04,201 DEBUG Prepared packet: host_name=MFC_Info, item_key=mrt.mobile_bandwidth, item_value=0
+2024-08-03 00:00:04,201 DEBUG Prepared packet: host_name=MFC_Info, item_key=mrt.mobile_users, item_value=0
+2024-08-03 00:00:04,421 ERROR Error sending data to Zabbix: [Errno 111] Connection refused
