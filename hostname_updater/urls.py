@@ -1,0 +1,6 @@
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('update-hostname/', views.update_hostname, name='update_hostname'),
+]

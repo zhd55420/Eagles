@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Hostname</title>
+</head>
+<body>
+    <h1>Update Hostname</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update</button>
+    </form>
+    <p>Note: For bulk input, each line should be in the format: <code>IP, New Hostname</code></p>
+</body>
+</html>
