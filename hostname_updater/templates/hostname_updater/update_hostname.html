@@ -2,14 +2,91 @@
 <html>
 <head>
     <title>Update Hostname</title>
+    {% load static %}
+    {% load form_tags %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <script src="{% static 'bootstrap.bundle.min.js' %}"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin-bottom: 30px;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .form-control {
+            margin-bottom: 20px;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        p {
+            margin-top: 20px;
+            color: #6c757d;
+        }
+        code {
+            color: #e83e8c;
+        }
+    </style>
 </head>
 <body>
-    <h1>Update Hostname</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Update</button>
-    </form>
-    <p>Note: For bulk input, each line should be in the format: <code>IP, New Hostname</code></p>
+    <div class="container">
+        <h1>Update Hostname</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="single_ip_address">Single IP Address:</label>
+                {{ form.single_ip_address|add_class:"form-control" }}
+            </div>
+            <div class="form-group">
+                <label for="single_new_hostname">Single New Hostname:</label>
+                {{ form.single_new_hostname|add_class:"form-control" }}
+            </div>
+            <div class="form-group">
+                <label for="bulk_input">Bulk Input:</label>
+                {{ form.bulk_input|add_class:"form-control" }}
+                <p>Note: For bulk input, each line should be in the format: <code>IP, New Hostname</code></p>
+            </div>
+            <div class="form-group">
+                <label for="zabbix_server">Zabbix Server:</label>
+                {{ form.zabbix_server|add_class:"form-control" }}
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+        {% if success_messages %}
+        <div class="alert alert-success mt-3">
+            <h4>Success</h4>
+            <ul>
+                {% for message in success_messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        {% if error_messages %}
+        <div class="alert alert-danger mt-3">
+            <h4>Errors</h4>
+            <ul>
+                {% for message in error_messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 </body>
 </html>

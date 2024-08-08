@@ -44,6 +44,25 @@ INSTALLED_APPS = [
     'hostname_updater',
 ]
 
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/4.0/howto/static-files/
+
+STATIC_URL = '/static/'
+
+# 静态文件目录
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+
+# 设置 STATIC_ROOT 用于 collectstatic 命令
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]
+
+
 # settings.py 文件中添加新的定时任务
 CRONJOBS = [
     ('*/30 * * * *', 'myapp.cron.run_opt_job_users_and_bw'),
@@ -202,21 +221,34 @@ VOD_INFLUXDB_CONFIG = {
 ZABBIX_CONFIG = {
     'livetv_01': {
         'IP': '135.148.52.229',
-        'PORT': 10051
+        'PORT': 10051,
+        'API_URL': 'http://135.148.52.229:8080/api_jsonrpc.php',
+        'API_USER': 'valor',
+        'API_PASSWORD': 'optnet!c47dff'
     },
     'livetv_02': {
         'IP': '51.81.49.118',
-        'PORT': 10051
+        'PORT': 10051,
+        'API_URL': 'http://51.81.49.118:8080/api_jsonrpc.php',
+        'API_USER': 'valor',
+        'API_PASSWORD': 'optnet!c47dff'
     },
     'vod_01': {
         'IP': '135.148.53.180',
-        'PORT': 10051
+        'PORT': 10051,
+        'API_URL': 'http://135.148.53.180:8080/api_jsonrpc.php',
+        'API_USER': 'valor',
+        'API_PASSWORD': 'optnet!c47dff'
     },
     'vod_02': {
         'IP': '51.81.49.196',
-        'PORT': 10051
+        'PORT': 10051,
+        'API_URL': 'http://51.81.49.196:8080/api_jsonrpc.php',
+        'API_USER': 'valor',
+        'API_PASSWORD': 'optnet!c47dff'
     },
 }
+
 
 opt_LARK_WEBHOOK_URL = 'https://open.larksuite.com/open-apis/bot/v2/hook/96c73090-2a31-4a6c-9721-c5c291c7777c'
 spc_LARK_WEBHOOK_URL = 'https://open.larksuite.com/open-apis/bot/v2/hook/9b4a8d03-8db4-4e2a-903d-459de038b814'
