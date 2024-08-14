@@ -7,30 +7,10 @@ from django.http import HttpResponse
 import logging
 from .forms import HostnameUpdateForm
 from .utils.utils import update_zabbix_hostname, update_telegraf_host
+# 配置 Django 设置模块
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Eagles.settings')
 
 logger = logging.getLogger('hostname_updater')
-
-def configure_logging():
-    log_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'logs')
-    if not os.path.exists(log_dir):
-        os.makedirs(log_dir)
-
-    handler = TimedRotatingFileHandler(
-        os.path.join(log_dir, 'hostname_updater.log'),
-        when='midnight',
-        interval=1,
-        backupCount=7,
-        encoding='utf-8'
-    )
-    handler.setFormatter(logging.Formatter('%(asctime)s %(levelname)s %(message)s'))
-    handler.setLevel(logging.DEBUG)
-
-    logger = logging.getLogger('hostname_updater')
-    logger.addHandler(handler)
-    logger.setLevel(logging.DEBUG)
-
-
-configure_logging()
 
 def update_hostname(request):
     success_messages = []

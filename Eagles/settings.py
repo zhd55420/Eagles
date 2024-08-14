@@ -80,6 +80,11 @@ if not os.path.exists(LOG_DIR):
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
+    'formatters': {
+        'standard': {
+            'format': '%(asctime)s [%(levelname)s] %(name)s: %(message)s'
+        },
+    },
     'handlers': {
         'file': {
             'level': 'DEBUG',
@@ -88,6 +93,34 @@ LOGGING = {
             'when': 'midnight',
             'backupCount': 7,
             'encoding': 'utf-8',
+            'formatter': 'standard',
+        },
+        'web': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': os.path.join(LOG_DIR, 'hostnameUpdater.log'),
+            'when': 'midnight',
+            'backupCount': 7,
+            'encoding': 'utf-8',
+            'formatter': 'standard',
+        },
+        'influxdb_query': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': os.path.join(LOG_DIR, 'influxdb_query_error.log'),
+            'when': 'midnight',
+            'backupCount': 7,
+            'encoding': 'utf-8',
+            'formatter': 'standard',
+        },
+        'bw_user': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': os.path.join(LOG_DIR, 'bw_user_logger.log'),
+            'when': 'midnight',
+            'backupCount': 7,
+            'encoding': 'utf-8',
+            'formatter': 'standard',
         },
     },
     'root': {
@@ -101,12 +134,17 @@ LOGGING = {
             'propagate': True,
         },
         'influxdb_query_error': {
-            'handlers': ['file'],
+            'handlers': ['influxdb_query'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+        'bandwidth_logger': {
+            'handlers': ['bw_user'],
             'level': 'DEBUG',
             'propagate': False,
         },
         'hostname_updater': {
-            'handlers': ['file'],
+            'handlers': ['web'],
             'level': 'DEBUG',
             'propagate': True,
         },
