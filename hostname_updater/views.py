@@ -1,12 +1,13 @@
 import os
 from logging.handlers import TimedRotatingFileHandler
-
+import yaml
 from django.conf import settings
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, redirect
+from django.http import HttpResponse,HttpResponseRedirect
 import logging
-from .forms import HostnameUpdateForm
+from .forms import HostnameUpdateForm,ResourceGroupForm, PRTForm, TrackerForm
 from .utils.utils import update_zabbix_hostname, update_telegraf_host
+from django.contrib import messages
 # 配置 Django 设置模块
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Eagles.settings')
 
@@ -73,3 +74,119 @@ def update_hostname(request):
     }
 
     return render(request, 'hostname_updater/update_hostname.html', context)
+
+
+# 获取项目根目录
+BASE_DIR = settings.BASE_DIR
+
+# 拼接出 resource_groups.yaml 的路径
+RESOURCE_GROUPS_YAML_PATH = os.path.join(BASE_DIR, 'myapp', 'Configs', 'resource_groups.yaml')
+
+def load_resource_groups():
+    with open(RESOURCE_GROUPS_YAML_PATH, 'r') as file:
+        data = yaml.safe_load(file)
+        return data.get('resource_groups', {})
+
+def save_resource_groups(data):
+    with open(RESOURCE_GROUPS_YAML_PATH, 'w') as file:
+        yaml.safe_dump({'resource_groups': data}, file)
+
+
+def manage_resources(request):
+    messages = []
+    resource_groups = load_resource_groups()
+    selected_group = None
+    prts = []
+    trackers = []
+
+    if request.method == 'POST':
+        if 'select_group' in request.POST:
+            selected_group = request.POST.get('group_name')
+            if selected_group:
+                prts = resource_groups[selected_group]['prt']
+                trackers = resource_groups[selected_group]['trackers']
+
+        elif 'submit_group' in request.POST:
+            group_form = ResourceGroupForm(request.POST)
+            if group_form.is_valid():
+                action = group_form.cleaned_data['action']
+                group_name = group_form.cleaned_data['group_name']
+                if action == 'add':
+                    if group_name in resource_groups:
+                        messages.append(f"⚠️ Resource group '{group_name}' already exists.")
+
+                    else:
+                        resource_groups[group_name] = {'prt': [], 'tracker': []}
+                        messages.append(f"✅ Resource group '{group_name}' added.")
+                elif action == 'delete':
+                    if group_name in resource_groups:
+                        del resource_groups[group_name]
+                        messages.append(f"❌ Resource group '{group_name}' deleted.")
+                    else:
+                        messages.append(f"⚠️ Resource group '{group_name}' does not exist.")
+                save_resource_groups(resource_groups)
+
+        elif 'submit_prt' in request.POST:
+            prt_form = PRTForm(request.POST, resource_groups=resource_groups.keys())
+            if prt_form.is_valid():
+                action = prt_form.cleaned_data['action']
+                group_name = prt_form.cleaned_data['group_name']
+                prt_value = prt_form.cleaned_data['prt_value']
+                if action == 'add':
+                    if prt_value in resource_groups[group_name]['prt']:
+                        messages.append(f"⚠️ PRT '{prt_value}' already exists in '{group_name}'.")
+                        logger.error(messages)
+                    else:
+                        resource_groups[group_name]['prt'].append(prt_value)
+                        messages.append(f"✅ PRT '{prt_value}' added to '{group_name}'.")
+                        logger.error(messages)
+                elif action == 'delete':
+                    if prt_value in resource_groups[group_name]['prt']:
+                        resource_groups[group_name]['prt'].remove(prt_value)
+                        messages.append(f"❌ PRT '{prt_value}' deleted from '{group_name}'.")
+                        logger.error(messages)
+                    else:
+                        messages.append(f"⚠️ PRT '{prt_value}' does not exist in '{group_name}'.")
+                        logger.error(messages)
+                save_resource_groups(resource_groups)
+            else:
+                print(prt_form.errors)
+
+        elif 'submit_tracker' in request.POST:
+            tracker_form = TrackerForm(request.POST, resource_groups=resource_groups.keys())
+            if tracker_form.is_valid():
+                action = tracker_form.cleaned_data['action']
+                group_name = tracker_form.cleaned_data['group_name']
+                tracker_value = tracker_form.cleaned_data['tracker_value']
+                if action == 'add':
+                    if tracker_value in resource_groups[group_name]['trackers']:
+                        messages.append(f"⚠️ Tracker '{tracker_value}' already exists in '{group_name}'.")
+                        logger.error(messages)
+                    else:
+                        resource_groups[group_name]['trackers'].append(tracker_value)
+                        messages.append(f"✅ Tracker '{tracker_value}' added to '{group_name}'.")
+                        logger.error(messages)
+                elif action == 'delete':
+                    if tracker_value in resource_groups[group_name]['trackers']:
+                        resource_groups[group_name]['trackers'].remove(tracker_value)
+                        messages.append(f"❌ Tracker '{tracker_value}' deleted from '{group_name}'.")
+                        logger.error(messages)
+                    else:
+                        messages.append(f"⚠️ Tracker '{tracker_value}' does not exist in '{group_name}'.")
+                        logger.error(messages)
+                save_resource_groups(resource_groups)
+
+    group_form = ResourceGroupForm()
+    prt_form = PRTForm(resource_groups=resource_groups.keys())
+    tracker_form = TrackerForm(resource_groups=resource_groups.keys())
+
+    return render(request, 'hostname_updater/manage_resources.html', {
+        'group_form': group_form,
+        'prt_form': prt_form,
+        'tracker_form': tracker_form,
+        'messages': messages,
+        'resource_groups': resource_groups,
+        'selected_group': selected_group,
+        'prts': prts,
+        'trackers': trackers,
+    })

@@ -8,6 +8,10 @@ brands:
       release_id: '31025926'
     WAKA TV Mobile:
       release_id: '31026773'
+    SAPA TV:
+      release_id: '31027715'
+    SAPA TV Mobile:
+      release_id: '31027704'
   spc:
     BTV:
       release_id: 'btvbox'
