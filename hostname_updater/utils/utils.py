@@ -87,3 +87,7 @@ def update_telegraf_host(ip_address, new_hostname):
         logger.error(
             f"Failed to update Telegraf and Zabbix Agent hostname for {ip_address} to {new_hostname}. Error: {str(e)}",
             exc_info=True)
+
+def get_zabbix_host_id(zapi, ip_address):
+    result = zapi.host.get(filter={"ip": ip_address})
+    return result[0]['hostid'] if result else None

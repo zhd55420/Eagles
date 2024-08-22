@@ -5,8 +5,8 @@ from django.conf import settings
 from django.shortcuts import render, redirect
 from django.http import HttpResponse,HttpResponseRedirect
 import logging
-from .forms import HostnameUpdateForm,ResourceGroupForm, PRTForm, TrackerForm
-from .utils.utils import update_zabbix_hostname, update_telegraf_host
+from .forms import HostnameUpdateForm,ResourceGroupForm, PRTForm, TrackerForm,ZabbixDeleteForm
+from .utils.utils import update_zabbix_hostname, update_telegraf_host, get_zabbix_connection, get_zabbix_host_id
 from django.contrib import messages
 # 配置 Django 设置模块
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Eagles.settings')
@@ -190,3 +190,56 @@ def manage_resources(request):
         'prts': prts,
         'trackers': trackers,
     })
+
+
+def zabbix_delete(request):
+    success_messages = []
+    error_messages = []
+    zabbix_servers = [(key, f"{key.replace('_', ' ').title()} Server") for key in settings.ZABBIX_CONFIG.keys()]
+
+    if request.method == 'POST':
+        form = ZabbixDeleteForm(request.POST)
+        form.fields['zabbix_server'].choices = zabbix_servers
+
+        if form.is_valid():
+            server_name = form.cleaned_data['zabbix_server']
+            ip_addresses = form.cleaned_data['ip_addresses'].splitlines()
+
+            for ip_address in ip_addresses:
+                ip_address = ip_address.strip()
+                if not ip_address:
+                    continue
+
+                try:
+                    zapi = get_zabbix_connection(server_name)
+                    host_id = get_zabbix_host_id(zapi, ip_address)
+
+                    if host_id:
+                        zapi.host.delete(host_id)  # 确保传递的 `host_id` 是一个列表
+                        message = f"Successfully deleted monitoring for IP: {ip_address} on {server_name}"
+                        messages.success(request, message)
+                        success_messages.append(message)
+                    else:
+                        message = f"No monitoring found for IP: {ip_address} on {server_name}"
+                        messages.warning(request, message)
+                        error_messages.append(message)
+
+                except Exception as e:
+                    message = f"Failed to delete monitoring for IP: {ip_address} on {server_name}. Error: {str(e)}"
+                    messages.error(request, message)
+                    error_messages.append(message)
+
+
+    else:
+        form = ZabbixDeleteForm()
+        form.fields['zabbix_server'].choices = zabbix_servers
+
+    context = {
+        'form': form,
+        'success_messages': success_messages,
+        'error_messages': error_messages,
+        'zabbix_servers': zabbix_servers,
+    }
+
+    return render(request, 'hostname_updater/zabbix_delete.html', context)
+

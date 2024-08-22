@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Zabbix Monitoring</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+</head>
+<body>
+<div class="container mt-5">
+    <h1>Delete Zabbix Monitoring</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="zabbix_server">Zabbix Server</label>
+            <select name="zabbix_server" class="form-control">
+                <option value="">-- Select a Zabbix Server --</option>
+                {% for key, name in zabbix_servers %}
+                    <option value="{{ key }}">{{ name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="ip_addresses">IP Addresses (one per line)</label>
+            <textarea name="ip_addresses" class="form-control" rows="5"></textarea>
+        </div>
+        <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete these IPs from monitoring?')">Delete Monitoring</button>
+    </form>
+
+    {% if success_messages %}
+        <div class="alert alert-success mt-4">
+            <ul>
+                {% for message in success_messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+    {% if error_messages %}
+        <div class="alert alert-danger mt-4">
+            <ul>
+                {% for message in error_messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+</div>
+<script src="{% static 'css/js/bootstrap.js' %}"></script>
+</body>
+</html>

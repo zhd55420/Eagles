@@ -43,3 +43,13 @@ class TrackerForm(forms.Form):
         super().__init__(*args, **kwargs)
         self.fields['group_name'].choices = [(name, name) for name in resource_groups]
 
+class ZabbixDeleteForm(forms.Form):
+    ip_addresses = forms.CharField(
+        widget=forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Enter IP addresses, one per line'}),
+        label='IP Addresses'
+    )
+    zabbix_server = forms.ChoiceField(
+        choices=[],  # 这里不需要默认值，动态生成
+        widget=forms.Select(attrs={'class': 'form-control'})
+    )
+
