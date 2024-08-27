@@ -14,9 +14,8 @@ django.setup()
 from myapp.Utils.send_to_lark import send_message_to_optlark, send_message_to_spclark,send_message_to_streamlark,send_message_to_Vodlark
 from myapp.Utils.query_bandwidth import query_and_log_bandwidth,query_and_log_tracker_users,query_and_log_resource_groups,query_and_log_vod  # 确保函数被正确导入
 from myapp.Utils.send_to_zabbix import query_vod_bw_users_send_to_zabbix,query_bw_users_send_to_zabbix
+from myapp.Utils.send_streamstatus_to_influxdb import all_stream_task,all_goose_stream_task
 
-# 获取日志记录器
-logger = logging.getLogger('bandwidth_logger')
 
 def run_opt_job_users_and_bw():
     query_and_log_bandwidth("opt", send_message_to_optlark)
@@ -40,6 +39,13 @@ def send_data_to_live_zabbix():
 
 def send_data_to_vod_zabbix():
     query_vod_bw_users_send_to_zabbix()
+
+def send_stream_status_influxdb():
+    all_stream_task()
+    all_goose_stream_task()
+
+if __name__ == '__main__':
+    send_stream_status_influxdb()
 
 
 

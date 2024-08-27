@@ -226,6 +226,8 @@ resource_groups:
     - prt-a16-zlr-was-a001
     - prt-a16-zlr-was-a002
     - prt-a16-zlr-was-g024
+    - prt-a16-cds-vin-a001
+    - prt-a16-cds-vin-a002
     trackers:
     - trk-a11-zlr-chi-a002
     - trx-a11-zlr-dal-a002
@@ -258,21 +260,14 @@ resource_groups:
   doozy-cdn-group:
     prt:
     - prt-a61-bud-mia-g001
-    - prt-a61-clv-nyc-g002
-    trackers:
-    - trk-a61-zlr-mia-a002-saas
-    - trk-a61-zlr-nyc-a001-saas
-  doozy-resource-group01:
-    prt:
     - prt-a61-bud-mia-g003
     - prt-a61-clv-nyc-g002
     - prt-a61-evc-nyc-g006
     - prt-a61-ovh-vin-g005
     - prt-a61-prc-nyc-g004
-    - prt-a61-bud-mia-g001
     trackers:
-    - trk-a61-zlr-nyc-a001
-    - trk-a61-zlr-mia-a002
+    - trk-a61-zlr-mia-a002-saas
+    - trk-a61-zlr-nyc-a001-saas
   goose-africa-cdn-group:
     prt:
     - prt-a00-evc-hk-g004

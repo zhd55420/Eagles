@@ -71,11 +71,29 @@ CRONJOBS = [
     ('*/30 0-11 * * *', 'myapp.cron.run_vod_job_users_and_bw'),
     ('*/2 * * * *', 'myapp.cron.send_data_to_live_zabbix'),
     ('*/2 * * * *', 'myapp.cron.send_data_to_vod_zabbix'),
+    ('*/1 * * * *', 'myapp.cron.send_stream_status_influxdb'),
 ]
 # 日志文件夹路径
+# 定义你的日志目录
 LOG_DIR = os.path.join(BASE_DIR, 'logs')
-if not os.path.exists(LOG_DIR):
-    os.makedirs(LOG_DIR)
+
+# 定义需要创建的子目录（即各个 app 的日志目录）
+log_subdirs = ['hostname_updater', 'myapp']
+
+
+# 确保日志目录和子目录存在
+def ensure_log_dirs():
+    if not os.path.exists(LOG_DIR):
+        os.makedirs(LOG_DIR)
+
+    for subdir in log_subdirs:
+        subdir_path = os.path.join(LOG_DIR, subdir)
+        if not os.path.exists(subdir_path):
+            os.makedirs(subdir_path)
+
+
+# 调用函数创建日志目录结构
+ensure_log_dirs()
 
 LOGGING = {
     'version': 1,
@@ -86,7 +104,7 @@ LOGGING = {
         },
     },
     'handlers': {
-        'file': {
+        'django': {
             'level': 'DEBUG',
             'class': 'logging.handlers.TimedRotatingFileHandler',
             'filename': os.path.join(LOG_DIR, 'app.log'),
@@ -95,10 +113,19 @@ LOGGING = {
             'encoding': 'utf-8',
             'formatter': 'standard',
         },
-        'web': {
+        'hostname_updater': {
             'level': 'DEBUG',
             'class': 'logging.handlers.TimedRotatingFileHandler',
-            'filename': os.path.join(LOG_DIR, 'webrequest.log'),
+            'filename': os.path.join(LOG_DIR,  'hostname_updater','webrequest.log'),
+            'when': 'midnight',
+            'backupCount': 7,
+            'encoding': 'utf-8',
+            'formatter': 'standard',
+        },
+        'streamstatus': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': os.path.join(LOG_DIR, 'myapp', 'streamstatus.log'),
             'when': 'midnight',
             'backupCount': 7,
             'encoding': 'utf-8',
@@ -107,7 +134,7 @@ LOGGING = {
         'influxdb_query': {
             'level': 'DEBUG',
             'class': 'logging.handlers.TimedRotatingFileHandler',
-            'filename': os.path.join(LOG_DIR, 'influxdb_query_error.log'),
+            'filename': os.path.join(LOG_DIR, 'myapp', 'influxdb_query_error.log'),
             'when': 'midnight',
             'backupCount': 7,
             'encoding': 'utf-8',
@@ -116,7 +143,7 @@ LOGGING = {
         'bw_user': {
             'level': 'DEBUG',
             'class': 'logging.handlers.TimedRotatingFileHandler',
-            'filename': os.path.join(LOG_DIR, 'bw_user_logger.log'),
+            'filename': os.path.join(LOG_DIR, 'myapp','bw_user_logger.log'),
             'when': 'midnight',
             'backupCount': 7,
             'encoding': 'utf-8',
@@ -124,29 +151,34 @@ LOGGING = {
         },
     },
     'root': {
-        'handlers': ['file'],
+        'handlers': ['django'],
         'level': 'DEBUG',
     },
     'loggers': {
         'django': {
-            'handlers': ['file'],
+            'handlers': ['django'],
             'level': 'DEBUG',
-            'propagate': True,
+            'propagate': False,  # 阻止向上传播到root logger
         },
         'influxdb_query_error': {
             'handlers': ['influxdb_query'],
             'level': 'DEBUG',
-            'propagate': False,
+            'propagate': False,  # 阻止向上传播到root logger
         },
         'bandwidth_logger': {
             'handlers': ['bw_user'],
             'level': 'DEBUG',
-            'propagate': False,
+            'propagate': False,  # 阻止向上传播到root logger
         },
         'hostname_updater': {
-            'handlers': ['web'],
+            'handlers': ['hostname_updater'],
             'level': 'DEBUG',
-            'propagate': True,
+            'propagate': False,  # 阻止向上传播到root logger
+        },
+        'streamstatus': {
+            'handlers': ['streamstatus'],
+            'level': 'DEBUG',
+            'propagate': False,  # 阻止向上传播到root logger
         },
     },
 }
