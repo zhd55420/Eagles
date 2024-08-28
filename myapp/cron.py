@@ -45,7 +45,7 @@ def send_stream_status_influxdb():
     all_goose_stream_task()
 
 if __name__ == '__main__':
-    send_stream_status_influxdb()
+    run_resource_group_job()
 
 
 
