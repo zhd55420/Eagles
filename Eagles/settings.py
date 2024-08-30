@@ -317,6 +317,13 @@ ZABBIX_CONFIG = {
         'API_USER': 'valor',
         'API_PASSWORD': 'optnet!c47dff'
     },
+    'goose_01': {
+        'IP': '51.81.49.196',
+        'PORT': 10051,
+        'API_URL': 'http://15.204.208.231/zabbix/api_jsonrpc.php',
+        'API_USER': 'valor',
+        'API_PASSWORD': '#A1H$eIvN2G9,0+9'
+    },
 }
 
 

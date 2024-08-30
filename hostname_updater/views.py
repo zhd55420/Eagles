@@ -27,7 +27,6 @@ def update_hostname(request):
             bulk_input = form.cleaned_data['bulk_input']
             zabbix_server = form.cleaned_data['zabbix_server']
 
-
             # 处理单个IP和主机名更新
             if single_ip_address and single_new_hostname:
                 result = update_zabbix_hostname(single_ip_address, single_new_hostname, zabbix_server)
@@ -48,10 +47,13 @@ def update_hostname(request):
                     try:
                         ip_address, new_hostname = map(str.strip, line.split(','))
                         result = update_zabbix_hostname(ip_address, new_hostname, zabbix_server)
+                        print(result)
                         if result:
-                            update_telegraf_host(ip_address, new_hostname)
+                            telegraf_result = update_telegraf_host(ip_address, new_hostname)
                             message = f"Successfully updated hostname for {ip_address} to {new_hostname}."
                             success_messages.append(message)
+                            success_messages.append(telegraf_result['message']) if telegraf_result[
+                                'success'] else error_messages.append(telegraf_result['message'])
                             logger.info(message)
                         else:
                             message = f"Failed to update hostname for {ip_address}."

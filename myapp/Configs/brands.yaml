@@ -12,6 +12,10 @@ brands:
       release_id: '31027715'
     SAPA TV Mobile:
       release_id: '31027704'
+    AFRO TV:
+      release_id: '31035815'
+    AFRO TV Mobile:
+      release_id: '31035816'
   spc:
     BTV:
       release_id: 'btvbox'
